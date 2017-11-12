@@ -64,6 +64,8 @@
     <RemoteCCompileToolExe>clang</RemoteCCompileToolExe>
     <RemoteCppCompileToolExe>clang</RemoteCppCompileToolExe>
     <RemoteLdToolExe>clang</RemoteLdToolExe>
+    <TargetName>MSD</TargetName>
+    <TargetExt />
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
