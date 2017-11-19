@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <cstdio>
 #include <stdlib.h>
+#include <ctime>
 #include <pthread.h>
 #include <csignal>
 
@@ -29,6 +30,19 @@ int main()
 		sleep(5);
 		pthread_cancel(pt1);
 		pthread_join(pt1, NULL);
+
+		FILE *errorlog;
+		errorlog = fopen("MSDError.log", "a+");
+		if (errorlog == NULL)
+		{
+			printf("ErrorLog file read/write Error!");
+			return -1;
+		}
+		
+		time_t currtime;
+		time(&currtime);
+		fprintf(errorlog, "[%s]\n", ctime(&currtime));
+		fclose(errorlog);
 	}
 
 	return 0;
